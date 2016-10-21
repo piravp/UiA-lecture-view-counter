@@ -12,6 +12,10 @@ Code is currently a mess aka. spaghetti code.
        * ...and so on
 * [ ] Step 5: Delta count - compare how many more people have watched each lecture since last execution. A column on the end that shows delta-viewers. 
 
+### Known issues
+Only extracts data from the 16 last videos on the webpage even though there are 36 (at this moment). 
+This is due to the fact that the html sourcecode, for some weird reason, isn't showing all of the info. 
+
 ### Libraries
 ```requests``` is used to collect full html. 
 ```bs4``` and ```re``` is used to filter out desired info. 
