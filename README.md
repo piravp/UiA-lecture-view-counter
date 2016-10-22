@@ -1,4 +1,4 @@
-# UiA Lecture
+# UiA Lecture View Counter
 
 Code is currently a mess aka. spaghetti code. 
 
@@ -25,4 +25,5 @@ Update: The 'weird reason' for this is that the page requires the user to scroll
 ```requests``` is used to collect full html. 
 ```bs4``` and ```re``` is used to filter out desired info. 
 ```datetime``` is used to name files according to current date. 
+```collections.OrderedDict``` is used instead of the built-in dictionary because it messes up the order when each key/pair-value is declared. 
 
