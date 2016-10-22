@@ -22,8 +22,8 @@ Update: The 'weird reason' for this is that the page requires the user to scroll
         runs in the background when the user scrolls down. 
 
 ### Libraries
-```requests``` is used to collect full html. 
-```bs4``` and ```re``` is used to filter out desired info. 
-```datetime``` is used to name files according to current date. 
-```collections.OrderedDict``` is used instead of the built-in dictionary because it messes up the order when each key/pair-value is declared. 
+- ```requests``` is used to collect full html. 
+- ```bs4``` and ```re``` is used to filter out desired info. 
+- ```datetime``` is used to name files according to current date. 
+- ```collections.OrderedDict``` is used instead of the built-in dictionary because it messes up the order when each key/pair-value is declared. 
 
