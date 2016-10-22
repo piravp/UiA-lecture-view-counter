@@ -65,28 +65,42 @@ print()
 #     print(number)
 print("-----")
 print(find_date)
+
+
 biblio = {}
-
-
 counter = -1
+
+from collections import OrderedDict
+biblio_ordered = OrderedDict()
+
+
 for element in find_date:
     counter += 1
-    info = "Lecture:", element, "\t", "Watched:", viewers[counter]
-    infoo = "Lecture: %s \t Watched: %s" % (element, viewers[counter])
-    print(infoo)
-    createFile(infoo+"\n")
+    # info = "Lecture:", element, "\t", "Watched:", viewers[counter]
+    # infoo = "Lecture: %s \t Watched: %s" % (element, viewers[counter])
+    # print(infoo)
+    # createFile(infoo+"\n")
 
     biblio[element] = viewers[counter]  # putting in dictionary fucks up the order
+    biblio_ordered[element] = viewers[counter]
 
 
 # for key, value in biblio.items():
 #     print(key + ":\t" + value)
 
+for key, value in biblio_ordered.items():
+    print(key + ":\t" + value)
+
 print()
-print(biblio)
+#print(sorted(biblio))
+print(biblio_ordered)
 print("Lectures that match:", len(div_with_phoneData))
 
-
+# README.md:
+# Why do I use collections.OrderedDict instead of builtin-dictionary?
+#
+# Because using ordinary dictionary fucks up the order.
+#
 
 
 
