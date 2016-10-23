@@ -6,18 +6,24 @@ import datetime
 
 def getDate():
 
+    # get todays date
     now = datetime.datetime.now()
     return now.strftime('%d-%m-%Y')
 
 
 def createFile(tekst=""):
 
-    filename = getDate() + ".txt"
-    print(filename)
+    # file with filename that equals todays date
+    sub_directory = "./results/"
+    date = getDate()
+    file_extension = ".txt"
+    filename_path = "".join((sub_directory, date, file_extension))
+    print(filename_path)
+    print(date)
 
-    with open(filename, 'a') as file:
-        string = "Date checked: " + filename.strip('.txt') + "\n"
-        file.write(string)
+    with open(filename_path, 'a') as file:
+        first_line = "Date checked: " + date + "\n"
+        file.write(first_line)
         file.write(tekst)
         file.write("--------------------------------------------\n")
 
@@ -76,32 +82,27 @@ biblio_ordered = OrderedDict()
 
 for element in find_date:
     counter += 1
-    # info = "Lecture:", element, "\t", "Watched:", viewers[counter]
-    # infoo = "Lecture: %s \t Watched: %s" % (element, viewers[counter])
-    # print(infoo)
-    # createFile(infoo+"\n")
+    info = "Lecture:", element, "\t", "Watched:", viewers[counter]
+    infoo = "Lecture: %s \t Watched: %s" % (element, viewers[counter])
+    print(infoo)
+    createFile(infoo+"\n")
 
-    biblio[element] = viewers[counter]  # putting in dictionary fucks up the order
+    # biblio[element] = viewers[counter]  # putting in dictionary fucks up the order
     biblio_ordered[element] = viewers[counter]
 
 
 # for key, value in biblio.items():
 #     print(key + ":\t" + value)
 
-for key, value in biblio_ordered.items():
-    print(key + ":\t" + value)
+# for key, value in biblio_ordered.items():
+#     print(key + ":\t" + value)
 
 print()
-#print(sorted(biblio))
-print(biblio_ordered)
+# print(biblio_ordered)
 print("Lectures that match:", len(div_with_phoneData))
 
-# README.md:
-# Why do I use collections.OrderedDict instead of builtin-dictionary?
-#
-# Because using ordinary dictionary fucks up the order.
-#
+# TODO: structure code, rename variables, possibility to add additional courses
 
-
+# Git problem: http://git.661346.n2.nabble.com/can-anybody-explain-the-following-to-a-git-noob-td2955567.html
 
 
