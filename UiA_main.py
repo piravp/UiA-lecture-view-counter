@@ -35,9 +35,9 @@ soup = BeautifulSoup(r.text, "html.parser")
 # get title (unfiltered)
 class_with_title = soup.find_all(class_="media-heading")
 str_class_with_title = str(soup.find_all(class_="media-heading"))
-# finn forelesning (filtered)
+# find lecture (filtered)
 find_date = re.findall(r"Time \d.+\d", str_class_with_title)
-find_date_sub = re.sub(r"(Time \d)(.+\d)", r'(\2) \1', str_class_with_title)    # bytte rekkefølge på antall og dato
+#find_date_sub = re.sub(r"(Time \d)(.+\d)", r'(\2) \1', str_class_with_title)    # change order on viewers and lecture
 
 
 # get number of people watched (unfiltered)
@@ -51,23 +51,18 @@ for i in find_number_and_spans:
     viewers.append(find_number_and_spans[j].strip('</span>'))
     j+=1
 
-print(viewers)
+print("Viewers-count table:", viewers)
+print("Lecture table:\t\t", find_date)
+
 print()
-
-# remove span-tag, print only number
-# for spanNumber in find_number:
-#     number = spanNumber.strip('</span>')
-#     print(number)
 print("-----")
-print(find_date)
 
-
-biblio = {}
-counter = -1
 
 from collections import OrderedDict
 biblio_ordered = OrderedDict()
 
+biblio = {}
+counter = -1
 
 for element in find_date:
     counter += 1
@@ -76,22 +71,18 @@ for element in find_date:
     print(infoo)
     createFile(infoo+"\n")
 
-    # biblio[element] = viewers[counter]  # putting in dictionary fucks up the order
+    # put in dictionary in declared order using OrderedDict
     biblio_ordered[element] = viewers[counter]
 
-
-# for key, value in biblio.items():
-#     print(key + ":\t" + value)
-
-# for key, value in biblio_ordered.items():
-#     print(key + ":\t" + value)
-
 print()
-# print(biblio_ordered)
+# # print content inside dictionary
+# for key, value in biblio_ordered.items():
+#     print(key + ":\t\t" + value)
+
 print("Lectures that match:", len(div_with_phoneData))
 
 
-# TODO: structure code, rename variables, possibility to add additional courses
+# TODO: add comments, structure code, rename variables, possibility to add additional courses
 
 # Git problem: http://git.661346.n2.nabble.com/can-anybody-explain-the-following-to-a-git-noob-td2955567.html
 
