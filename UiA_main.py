@@ -31,17 +31,6 @@ r = rq.get("https://video.uia.no/category/Undervisning%3EFakultet+for+teknologi+
 
 soup = BeautifulSoup(r.text, "html.parser")
 
-# hent ut alle span-tagsene med class='stat'    (dette er klassen som inneholder antall visninger)
-#span_with_stat = str(soup.find_all("span", "stat"))
-
-# hent ut tallene
-#find_number = re.findall(r"<\/span>\d{1,}", span_with_stat)
-
-# find_number = re.findall(r"<\/span>\d{1,}", span_with_stat)
-# print(len(find_number))
-#
-#
-# print(find_number)
 
 # get title (unfiltered)
 class_with_title = soup.find_all(class_="media-heading")
@@ -100,6 +89,7 @@ for element in find_date:
 print()
 # print(biblio_ordered)
 print("Lectures that match:", len(div_with_phoneData))
+
 
 # TODO: structure code, rename variables, possibility to add additional courses
 

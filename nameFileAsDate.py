@@ -1,21 +1,27 @@
-
+import datetime
 
 
 # get current date (formatted)
 def getDate():
-    import datetime
+
+    # get todays date
     now = datetime.datetime.now()
     return now.strftime('%d-%m-%Y')
 
 
 def createFile(tekst=""):
 
-    filename = getDate() + ".txt"
-    print(filename)
+    # file with filename that equals todays date
+    sub_directory = "./results/"
+    date = getDate()
+    file_extension = ".txt"
+    filename_path = "".join((sub_directory, date, file_extension))
+    print(filename_path)
+    print(date)
 
-    with open(filename, 'a') as file:
-        string = "Date checked: " + filename.strip('.txt') + "\n"
-        file.write(string)
+    with open(filename_path, 'a') as file:
+        first_line = "Date checked: " + date + "\n"
+        file.write(first_line)
         file.write(tekst)
         file.write("--------------------------------------------\n")
 
