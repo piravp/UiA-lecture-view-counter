@@ -18,9 +18,9 @@ Code is currently a mess aka. spaghetti code.
 Only extracts data from the 16 last videos on the webpage even though there are 36 (at this moment). 
 This is due to the fact that the html sourcecode, for some weird reason, isn't showing all of the info. 
 
-Update: The 'weird reason' for this is that the page requires the user to scroll down to load rest of the videoes. 
-        Only when the user scrolls down he or she can view rest of the data. This is because there's a javascript that 
-        runs in the background when the user scrolls down. 
+*Update: The 'weird reason' for this is that the page requires the user to scroll down to load rest of the videoes.* 
+        *Only when the user scrolls down he or she can view rest of the data. This is because there's a javascript that* 
+        *runs in the background when the user scrolls down.* 
 
 ### Libraries
 - ```requests``` is used to collect full html. 
