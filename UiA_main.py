@@ -8,7 +8,7 @@ def getDate():
 
     # get todays date
     now = datetime.datetime.now()
-    return now.strftime('%d-%m-%Y')
+    return now.strftime('%Y-%m-%d_%H%M')
 
 
 def createFile(tekst=""):
