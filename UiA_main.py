@@ -82,7 +82,7 @@ print()
 print("Lectures that match:", len(div_with_phoneData))
 
 
-# TODO: possibility to run script severeal times a day without overwriting file, add comments, structure code, rename variables, possibility to add additional courses
+# TODO: Add requirements.txt-file, possibility to run script severeal times a day without overwriting file, add comments, structure code, rename variables, possibility to add additional courses
 
 # Git problem: http://git.661346.n2.nabble.com/can-anybody-explain-the-following-to-a-git-noob-td2955567.html
 
