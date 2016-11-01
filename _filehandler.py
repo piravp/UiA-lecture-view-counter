@@ -1,7 +1,7 @@
 import datetime
+import os
 
 
-# get current date (formatted)
 def getDate():
 
     # get todays date
@@ -9,7 +9,19 @@ def getDate():
     return now.strftime('%Y-%m-%d_%H%M')
 
 
-def createFile(tekst=""):
+def createResultsDir():
+
+    # create subdirectory to put results inside
+    try:
+        os.mkdir(os.curdir + "/results")
+    except:
+        print("Directory already exists.")
+
+
+def createFile(text=""):
+
+    # subdirectory where results should reside
+    createResultsDir()
 
     # file with filename that equals todays date
     sub_directory = "./results/"
@@ -22,9 +34,5 @@ def createFile(tekst=""):
     with open(filename_path, 'a') as file:
         first_line = "Date checked: " + date + "\n"
         file.write(first_line)
-        file.write(tekst)
+        file.write(text)
         file.write("--------------------------------------------\n")
-
-
-
-createFile()

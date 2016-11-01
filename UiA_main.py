@@ -1,31 +1,8 @@
 import requests as rq
 from bs4 import BeautifulSoup
 import re
-import datetime
+import _filehandler
 
-
-def getDate():
-
-    # get todays date
-    now = datetime.datetime.now()
-    return now.strftime('%Y-%m-%d_%H%M')
-
-
-def createFile(tekst=""):
-
-    # file with filename that equals todays date
-    sub_directory = "./results/"
-    date = getDate()
-    file_extension = ".txt"
-    filename_path = "".join((sub_directory, date, file_extension))
-    print(filename_path)
-    print(date)
-
-    with open(filename_path, 'a') as file:
-        first_line = "Date checked: " + date + "\n"
-        file.write(first_line)
-        file.write(tekst)
-        file.write("--------------------------------------------\n")
 
 r = rq.get("https://video.uia.no/category/Undervisning%3EFakultet+for+teknologi+og+realfag%3EMA-209")
 
@@ -69,12 +46,16 @@ for element in find_date:
     info = "Lecture:", element, "\t", "Watched:", viewers[counter]
     infoo = "Lecture: %s \t Watched: %s" % (element, viewers[counter])
     print(infoo)
-    createFile(infoo+"\n")
+
+    _filehandler.createFile(infoo+"\n")
+    #createFile(infoo+"\n")
 
     # put in dictionary in declared order using OrderedDict
     biblio_ordered[element] = viewers[counter]
 
 print()
+
+# NOTE: Dictionary is for when script is further developed to put results in .csv
 # # print content inside dictionary
 # for key, value in biblio_ordered.items():
 #     print(key + ":\t\t" + value)
@@ -82,8 +63,12 @@ print()
 print("Lectures that match:", len(div_with_phoneData))
 
 
-# TODO: Add requirements.txt-file, possibility to run script severeal times a day without overwriting file, add comments, structure code, rename variables, possibility to add additional courses
+# TODO: Add requirements.txt-file - run 'pip freeze' to get version of all modules installed.
+# TODO: structure code, rename variables, possibility to add additional courses
+
 
 # Git problem: http://git.661346.n2.nabble.com/can-anybody-explain-the-following-to-a-git-noob-td2955567.html
 
+# For .exe file
+input("Press any key to exit.")
 
