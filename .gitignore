@@ -1,2 +1,4 @@
 .idea
+__pycache__/
 bundle-resources/
+things_to_check.txt

@@ -27,4 +27,4 @@ This is due to the fact that the html sourcecode, for some weird reason, isn't s
 - ```bs4``` and ```re``` is used to filter out desired info. 
 - ```datetime``` is used to name files according to current date. 
 - ```collections.OrderedDict``` is used instead of the built-in dictionary because it messes up the order when each key/pair-value is declared. 
-
+- ```os``` to create directory. 
