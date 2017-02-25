@@ -28,15 +28,15 @@ Download this repository as ZIP, navigate to the exe folder and run the .exe UiA
 
 ### Known issues
 Only extracts data from the 16 last videos on the webpage even though there are 36 (at this moment). 
-This is due to the fact that the html sourcecode, for some weird reason, isn't showing all of the info. 
+This is due to the fact that the html sourcecode isn't showing all of the info. 
 
 *Update: The 'weird reason' for this is that the page requires the user to scroll down to load rest of the videoes.* 
-        *Only when the user scrolls down he or she can view rest of the data. This is because there's a javascript script that* 
+        *Only when the user scrolls down can he view rest of the data. This is because there's a javascript script that* 
         *is fired to a API only when the user scrolls down.* 
 
 ### Libraries
 - ```requests``` is used to collect full html. 
-- ```bs4``` and ```re``` is used to filter out desired info. 
+- ```bs4``` and ```re``` are used to filter out desired info. 
 - ```datetime``` is used to name files according to current date. 
 - ```collections.OrderedDict``` is used instead of the built-in dictionary because it messes up the order when each key/pair-value is declared. 
 - ```os``` to create directory. 
