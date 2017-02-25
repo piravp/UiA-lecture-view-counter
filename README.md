@@ -7,6 +7,7 @@ If you already have python installed (external modules required), you can run th
 ```
 git clone https://github.com/piravp/UiA-lecture-view-counter
 cd UiA-lecture-view-counter
+pip install -r requirements.txt
 python UiA_main.py
 ```
 
