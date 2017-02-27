@@ -1,6 +1,7 @@
 # UiA Lecture View Counter
 
-Code is currently a mess aka. spaghetti code. 
+A script that checks how many views each MA-209 lecture (lecture @ UiA) has recieved. Results are then dumped to .txt in a formatted fashion. 
+Code needs refactoring.  
 
 ### Installation 
 If you already have python installed (external modules required), you can run this from a command shell:
@@ -11,15 +12,15 @@ pip install -r requirements.txt
 python UiA_main.py
 ```
 
-If you don't have python installed or don't want to run this with python:
-Download this repository as ZIP, navigate to the exe folder and run the .exe UiA-Lecture-View-Counter.
+If you don't have python installed or don't want to set it up:
+Download the latest executable from [releases](https://github.com/piravp/UiA-lecture-view-counter/releases).
 
 
 ### How it works
 * [x] Step 1: Collect HTML from http://www.uia.no/video site that contains lecture for [MA-209](https://video.uia.no/category/Undervisning%3EFakultet+for+teknologi+og+realfag%3EMA-209).
 * [x] Step 2: Filter out date and how many people have watched each lecture.
 * [x] Step 3: Dump data to file
-* [x] Step 4: Make runnable script so there's no requirement for python to be pre-installed.
+* [x] Step 4: Make an executable (.exe). 
 * [ ] Step 5: Alternatively, the user may specify that he wants to dump all the data as .pdf. 
 * [ ] Step 6: Write to a .xlsx file. First row holds datetime of execution of the code. 
        * First column holds date of lecture. Second column holds how many have watched when the first execution is done. 
